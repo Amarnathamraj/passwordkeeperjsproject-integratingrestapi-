@@ -36,7 +36,8 @@ form.addEventListener('submit', function(event) {
     const Emailtitle = EmailInput.value;
     const password = passwordInput.value;
 
-    
+    //EmailInput.value = '';
+   // passwordInput.value = '';
     
     const obj = {
         Emailtitle: Emailtitle,
@@ -47,7 +48,7 @@ form.addEventListener('submit', function(event) {
     localStorage.setItem(Emailtitle, newobj); // Use unique key for each expense
 
     axios
-      .post("https://crudcrud.com/api/61d0eea7b94f496ca24627cc8e3d3975/passdata",obj)
+      .post("https://crudcrud.com/api/fbbda6f0d4ea46779c01e4a8075ad481/passdata",obj)
       .then((response) => displayUserOnScreen(response.data))
       .catch((error) => console.log(error));
   
@@ -59,7 +60,7 @@ form.addEventListener('submit', function(event) {
   
   window.addEventListener("DOMContentLoaded", () => {
     axios
-      .get("https://crudcrud.com/api/61d0eea7b94f496ca24627cc8e3d3975/passdata")
+      .get("https://crudcrud.com/api/fbbda6f0d4ea46779c01e4a8075ad481/passdata")
       .then((res) => {
         console.log(res);
         for (var i = 0; i < res.data.length; i++) {
@@ -68,6 +69,7 @@ form.addEventListener('submit', function(event) {
       })
       .catch((error) => console.log(error));
   });
+  
   
   function displayUserOnScreen(obj) {
     const userItem = document.createElement("li");
@@ -94,7 +96,7 @@ form.addEventListener('submit', function(event) {
       userList.removeChild(userItem);
       updatePasswordCount();
       axios
-        .delete(`https://crudcrud.com/api/61d0eea7b94f496ca24627cc8e3d3975/passdata/${obj._id}`)
+        .delete(`https://crudcrud.com/api/fbbda6f0d4ea46779c01e4a8075ad481/passdata/${obj._id}`)
         .then((res) => {
           console.log(res);
         })
@@ -107,7 +109,7 @@ form.addEventListener('submit', function(event) {
         userList.removeChild(userItem);
        // localStorage.removeItem(userDetails.email);
        axios
-        .delete(`https://crudcrud.com/api/61d0eea7b94f496ca24627cc8e3d3975/passdata/${obj._id}`)
+        .delete(`https://crudcrud.com/api/fbbda6f0d4ea46779c01e4a8075ad481/passdata/${obj._id}`)
         .then((res) => {
           console.log(res);
         })
