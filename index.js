@@ -1,12 +1,12 @@
 const form = document.querySelector('form');
 //const searchInput = document.getElementById('search');
-const passwordCountDiv = document.getElementById('passwordCount');
+const countoftotalpasswords = document.getElementById('passwordCount');
 
 // Function to update password count
 function updatePasswordCount() {
     const passwordListItems = document.querySelectorAll('#userlist li');
     const passwordCount = passwordListItems.length;
-    passwordCountDiv.textContent = passwordCount;
+    countoftotalpasswords.textContent = passwordCount;
 }
 
 const searchInput = document.getElementById('search');
@@ -36,17 +36,13 @@ form.addEventListener('submit', function(event) {
     const Emailtitle = EmailInput.value;
     const password = passwordInput.value;
 
-    
-    EmailInput.value = '';
-    passwordInput.value = '';
-
     const obj = {
         Emailtitle: Emailtitle,
         password: password,
     };
 
-    const newobj = JSON.stringify(obj);
-    localStorage.setItem(Emailtitle, newobj); // Use unique key for each expense
+   // const newobj = JSON.stringify(obj);//addding items in local storage 
+   // localStorage.setItem(Emailtitle, newobj); // Use unique key for each expense
 
     axios
       .post("https://crudcrud.com/api/19af5ab3a13d43768fb77a36546bb5b0/passdata",obj)
@@ -80,12 +76,10 @@ form.addEventListener('submit', function(event) {
     );
   
     const deleteBtn = document.createElement("button");
-    //deleteBtn.className = "delete-btn";
     deleteBtn.appendChild(document.createTextNode("Delete"));
     userItem.appendChild(deleteBtn);
   
     const editBtn = document.createElement("button");
-    //editBtn.className = "edit-btn";
     editBtn.appendChild(document.createTextNode("Edit"));
     userItem.appendChild(editBtn);
   
@@ -122,7 +116,7 @@ form.addEventListener('submit', function(event) {
       });
 
       updatePasswordCount();
-  // Update the password count after adding
+  // Update the password count after adding the items
 };
 
- // Update the password count initially
+
