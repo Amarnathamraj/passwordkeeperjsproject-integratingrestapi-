@@ -36,16 +36,18 @@ form.addEventListener('submit', function(event) {
     const Emailtitle = EmailInput.value;
     const password = passwordInput.value;
 
+    
+    
     const obj = {
         Emailtitle: Emailtitle,
         password: password,
     };
 
-   // const newobj = JSON.stringify(obj);//addding items in local storage 
-   // localStorage.setItem(Emailtitle, newobj); // Use unique key for each expense
+    const newobj = JSON.stringify(obj);
+    localStorage.setItem(Emailtitle, newobj); // Use unique key for each expense
 
     axios
-      .post("https://crudcrud.com/api/19af5ab3a13d43768fb77a36546bb5b0/passdata",obj)
+      .post("https://crudcrud.com/api/61d0eea7b94f496ca24627cc8e3d3975/passdata",obj)
       .then((response) => displayUserOnScreen(response.data))
       .catch((error) => console.log(error));
   
@@ -57,7 +59,7 @@ form.addEventListener('submit', function(event) {
   
   window.addEventListener("DOMContentLoaded", () => {
     axios
-      .get("https://crudcrud.com/api/19af5ab3a13d43768fb77a36546bb5b0/passdata")
+      .get("https://crudcrud.com/api/61d0eea7b94f496ca24627cc8e3d3975/passdata")
       .then((res) => {
         console.log(res);
         for (var i = 0; i < res.data.length; i++) {
@@ -76,10 +78,12 @@ form.addEventListener('submit', function(event) {
     );
   
     const deleteBtn = document.createElement("button");
+    //deleteBtn.className = "delete-btn";
     deleteBtn.appendChild(document.createTextNode("Delete"));
     userItem.appendChild(deleteBtn);
   
     const editBtn = document.createElement("button");
+    //editBtn.className = "edit-btn";
     editBtn.appendChild(document.createTextNode("Edit"));
     userItem.appendChild(editBtn);
   
@@ -90,7 +94,7 @@ form.addEventListener('submit', function(event) {
       userList.removeChild(userItem);
       updatePasswordCount();
       axios
-        .delete(`https://crudcrud.com/api/19af5ab3a13d43768fb77a36546bb5b0/passdata/${obj._id}`)
+        .delete(`https://crudcrud.com/api/61d0eea7b94f496ca24627cc8e3d3975/passdata/${obj._id}`)
         .then((res) => {
           console.log(res);
         })
@@ -103,7 +107,7 @@ form.addEventListener('submit', function(event) {
         userList.removeChild(userItem);
        // localStorage.removeItem(userDetails.email);
        axios
-        .delete(`https://crudcrud.com/api/19af5ab3a13d43768fb77a36546bb5b0/passdata/${obj._id}`)
+        .delete(`https://crudcrud.com/api/61d0eea7b94f496ca24627cc8e3d3975/passdata/${obj._id}`)
         .then((res) => {
           console.log(res);
         })
@@ -116,7 +120,7 @@ form.addEventListener('submit', function(event) {
       });
 
       updatePasswordCount();
-  // Update the password count after adding the items
+  // Update the password count after adding
 };
 
-
+ // Update the password count initially
