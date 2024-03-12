@@ -9,26 +9,27 @@
     crossorigin="anonymous">
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body style="background-color:powderblue;">
    
     <div class="container">
-        <h1>Password Keeper</h1>
+        <h1 style="color:black; text-align:center;
+              font-size: 300%;">Password Keeper</h1>
         <form id="passwordform">
             <div class="row align-items-center">
                 <div class="col">
-                    <label for="text" class="form-label">Title:</label>
-                    <input type="email" id="text" class="form-control" style="width:200px">
+                    <label for="text" class="form-label" style="font-weight:bold;padding:5px;">Title:</label>
+                    <input type="email" id="text" class="form-control" style="width:200px";>
                 </div>
                 <div class="col">
-                    <label for="passwords" class="form-label">Password:</label>
+                    <label for="passwords" class="form-label" style="font-weight:bold;padding:5px;">Password:</label>
                     <input type="password" id="passwords" class="form-control" style="width:200px">
                 </div>
                 <div class="col ">
-                      <label for="passwordCount" class="form-label">Total Password Count:</label>
+                      <label for="passwordCount" class="form-label"style="font-weight:bold;padding: 5px">Total Password Count:</label>
                         <div id="passwordCount" class="badge bg-secondary">0</div> <!--Initially set to zero-->
                     </div>
                 <div class="col">
-                    <input id="search" type="text" placeholder="Search Passwords" class="form-control" style="width:200px">
+                    <input id="search" type="text" placeholder="Search Passwords" class="form-control" style="width:200px;padding:5px;">
                 </div>
 
                 <div class="col-auto">
@@ -39,7 +40,7 @@
     </div>
  
   
-    <ul id="userlist"></ul>
+    <ul id="userlist" style="margin-top: 20px;"></ul>
     
 
 <script src="index.js"></script>
@@ -47,4 +48,3 @@
 <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
-
