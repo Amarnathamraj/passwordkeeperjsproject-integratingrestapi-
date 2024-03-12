@@ -116,7 +116,7 @@ form.addEventListener('submit', function(event) {
       });
 
       updatePasswordCount();
-  // Update the password count after adding
+  // Update the password count when u edit 
 };
 
-
+ updatePasswordCount();//update count initially when u add the items
