@@ -1,5 +1,4 @@
-const form = document.querySelector('form');
-//const searchInput = document.getElementById('search');
+const form = document.querySelector('#passwordform');
 const countoftotalpasswords = document.getElementById('passwordCount');
 
 // Function to update password count
@@ -9,9 +8,8 @@ function updatePasswordCount() {
     countoftotalpasswords.textContent = passwordCount;
 }
 
-const searchInput = document.getElementById('search');
-
 // Event listener for input in the search field
+const searchInput = document.getElementById('search');
 searchInput.addEventListener('input', function() {
     const searchValue = this.value.toLowerCase(); // Get the value entered in the search input field
     const userItems = document.querySelectorAll('#userlist li'); // Get all the password items
