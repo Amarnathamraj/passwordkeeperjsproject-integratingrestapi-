@@ -4,8 +4,8 @@ const countoftotalpasswords = document.getElementById('passwordCount');
 // Function to update password count
 function updatePasswordCount() {
     const passwordListItems = document.querySelectorAll('#userlist li');
-    const passwordCount = passwordListItems.length;
-    countoftotalpasswords.textContent = passwordCount;
+    const passwordCount = passwordListItems.length;//counts li items entered by user using queryselectorall
+    countoftotalpasswords.textContent = passwordCount;//this line used to display passwordcount on browser    
 }
 
 // Event listener for input in the search field
