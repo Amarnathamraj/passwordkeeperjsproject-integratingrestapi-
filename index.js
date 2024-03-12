@@ -89,7 +89,7 @@ form.addEventListener('submit', function(event) {
   
     deleteBtn.addEventListener("click", function (event) {
       userList.removeChild(userItem);//removes useritem from userlist when delete button is clicked
-      updatePasswordCount();
+      updatePasswordCount();//upadte password count as we are deleting item from userlist 
       axios
         .delete(`https://crudcrud.com/api/fbbda6f0d4ea46779c01e4a8075ad481/passdata/${obj._id}`)
         .then((res) => {
@@ -112,11 +112,8 @@ form.addEventListener('submit', function(event) {
         });
         document.getElementById("text").value = obj.Emailtitle;
         document.getElementById("passwords").value = obj.password;
+        updatePasswordCount();//decreases password count whenn u clickon edit buuton  
         
       });
-
-      updatePasswordCount();
-  // Update the password count when u edit 
+      updatePasswordCount();//update count initially when u add the items to userlist
 };
-
- updatePasswordCount();//update count initially when u add the items
