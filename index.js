@@ -85,6 +85,7 @@ form.addEventListener('submit', function(event) {
     userItem.appendChild(editBtn);
   
     const userList = document.querySelector("ul");
+    userItem.style.marginBottom = "10px"; // Add margin to create space between list items
     userList.appendChild(userItem);//appending emailtitle,password,deletebutton,editbutton to userList
   
     deleteBtn.addEventListener("click", function (event) {
