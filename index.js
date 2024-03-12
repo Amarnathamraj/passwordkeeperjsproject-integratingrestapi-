@@ -80,12 +80,12 @@ form.addEventListener('submit', function(event) {
     );
   
     const deleteBtn = document.createElement("button");
-    //deleteBtn.className = "delete-btn";
+    deleteBtn.style.backgroundColor = "red";
     deleteBtn.appendChild(document.createTextNode("Delete"));
     userItem.appendChild(deleteBtn);
   
     const editBtn = document.createElement("button");
-    //editBtn.className = "edit-btn";
+     editBtn.style.backgroundColor="yellow";
     editBtn.appendChild(document.createTextNode("Edit"));
     userItem.appendChild(editBtn);
   
