@@ -33,9 +33,6 @@ form.addEventListener('submit', function(event) {
 
     const Emailtitle = EmailInput.value;
     const password = passwordInput.value;
-
-    //EmailInput.value = '';
-   // passwordInput.value = '';
     
     const obj = {
         Emailtitle: Emailtitle,
@@ -88,10 +85,10 @@ form.addEventListener('submit', function(event) {
     userItem.appendChild(editBtn);
   
     const userList = document.querySelector("ul");
-    userList.appendChild(userItem);
+    userList.appendChild(userItem);//appending emailtitle,password,deletebutton,editbutton to userList
   
     deleteBtn.addEventListener("click", function (event) {
-      userList.removeChild(userItem);
+      userList.removeChild(userItem);//removes useritem from userlist when delete button is clicked
       updatePasswordCount();
       axios
         .delete(`https://crudcrud.com/api/fbbda6f0d4ea46779c01e4a8075ad481/passdata/${obj._id}`)
@@ -105,7 +102,6 @@ form.addEventListener('submit', function(event) {
   
     editBtn.addEventListener("click", function (event) {
         userList.removeChild(userItem);
-       // localStorage.removeItem(userDetails.email);
        axios
         .delete(`https://crudcrud.com/api/fbbda6f0d4ea46779c01e4a8075ad481/passdata/${obj._id}`)
         .then((res) => {
@@ -123,4 +119,4 @@ form.addEventListener('submit', function(event) {
   // Update the password count after adding
 };
 
- // Update the password count initially
+
