@@ -11,16 +11,16 @@ function updatePasswordCount() {
 // Event listener for input in the search field
 const searchInput = document.getElementById('search');
 searchInput.addEventListener('input', function() {
-    const searchValue = this.value.toLowerCase(); // Get the value entered in the search input field
-    const userItems = document.querySelectorAll('#userlist li'); // Get all the password items
+    const searchValue = this.value.toLowerCase(); // get the value entered in the search input field
+    const userItems = document.querySelectorAll('#userlist li'); // get all the password items
 
     for (let i = 0; i < userItems.length; i++) {
         const item = userItems[i];
-        const itemText = item.textContent.toLowerCase(); // Get the text content of each password item
+        const itemText = item.textContent.toLowerCase(); // get the text content of each password item
         if (itemText.includes(searchValue)) {
-            item.style.display = 'block'; // Show the item if it includes the search value
+            item.style.display = 'block'; // Shows the item if it is present the search value
         } else {
-            item.style.display = 'none'; // Hide the item if it does not include the search value
+            item.style.display = 'none'; // Hides the item if it does not include the search value
         }
     }
 });
